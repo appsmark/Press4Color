@@ -10,7 +10,7 @@ namespace Press4Color
 {
     public partial class MainPage : ContentPage
     {
-        private readonly Random rnd = new Random();
+        private readonly Random random_value = new Random();
         private int color = 2;
         
         public MainPage()
@@ -20,16 +20,16 @@ namespace Press4Color
         private void PressMeButton_Pressed(object sender, EventArgs e)
         {
             Button button = sender as Button;
-            int new_color = rnd.Next(1, 8);
+            int new_color = random_value.Next(1, 8);
             while (new_color == color)
             {
-                new_color = rnd.Next(1, 8);
+                new_color = random_value.Next(1, 8);
             }
             color = new_color;
             switch (color)
             {
                 case 1:
-                    button.BackgroundColor = Xamarin.Forms.Color.Aqua;
+                    button.BackgroundColor = Xamarin.Forms.Color.Orange;
                     break;
                 case 2:
                     button.BackgroundColor = Xamarin.Forms.Color.Red;
